@@ -2,17 +2,22 @@ package com.org.dto;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.stereotype.Component;
 
 
+@Component
 @Entity
 public class Notes {
 	
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
 	private String body;
@@ -38,6 +43,12 @@ public class Notes {
 	}
 	public void setBody(String body) {
 		this.body = body;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	
