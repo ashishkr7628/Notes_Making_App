@@ -2,6 +2,7 @@
 
 
 <% String path = request.getContextPath(); %>
+<% String userName =(String)session.getAttribute("userName"); %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="home.jsp">Note Making</a>
@@ -15,15 +16,14 @@
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 				
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="">Profile</a></li>
+						aria-current="page" href="<%=path %>/viewUser">Profile</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="notes/add_Notes.jsp">Add Notes</a></li>
 						<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="<%=path %>/view_Notes">View Notes</a></li>	
+					
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Change Password</a></li>
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">logout</a></li>
+						aria-current="page" href="logout">logout</a></li>
 				</ul>
 
 			</div>

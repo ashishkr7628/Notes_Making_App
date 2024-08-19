@@ -10,6 +10,12 @@
 </head>
 <body>
 <%@ include file="../components/homeNavbar.jsp"%>
+	<%if(userName==null){
+		
+		response.sendRedirect("login.jsp");
+		
+	}
+		%>
 
 <div class="row">
 <c:forEach items="${list }" var="n">

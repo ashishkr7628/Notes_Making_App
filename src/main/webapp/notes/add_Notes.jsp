@@ -9,6 +9,12 @@
 </head>
 <body>
 <%@ include file="../components/homeNavbar.jsp"%>
+	<%if(userName==null){
+		
+		response.sendRedirect("login.jsp");
+		
+	}
+		%>
 <form class="form-floating" action="../add_notes" method="post">
 <div class="card w-50 " >
   <div class="card-body">

@@ -55,8 +55,10 @@ private NotesDao notesDao;
 		System.out.println(list);
 		
 		int userId = list.get(0).getId();
+		String name = list.get(0).getName();
 		
 		session.setAttribute("userId", userId);
+		session.setAttribute("userName", name);
 		
 		
 		if(list.isEmpty()) {
@@ -195,6 +197,82 @@ private NotesDao notesDao;
 		
 		
 	}
+	
+	@GetMapping("viewUser")
+	
+	public ModelAndView viewUser(HttpSession session) {
+		
+		ModelAndView mav = new ModelAndView("user/viewUser.jsp");
+		
+		int userId = (int)session.getAttribute("userId");
+		
+		User user = userDao.fetchUserById(userId);
+		
+		mav.addObject("user",user);
+		
+		return mav;
+		
+		
+	}
+	
+	
+	
+	
+	
+	@GetMapping("updateUser")
+	
+	public ModelAndView updateUser(@RequestParam int id) {
+		
+		ModelAndView mav = new ModelAndView("user/updateUser.jsp");
+		
+		User user = userDao.fetchUserById(id);
+		
+		mav.addObject("user",user);
+		
+		return mav;
+		
+		
+	}
+	
+	
+	@PostMapping("update")
+	public ModelAndView userUpdate(@ModelAttribute User user) {
+		
+		ModelAndView mav = new ModelAndView("user/viewUser.jsp");
+		
+		userDao.insertAndUpdateUser(user);
+		
+	
+		
+		return mav;
+		
+		
+		
+		
+		
+	}
+
+	
+	
+	@GetMapping("logout")
+	
+	public ModelAndView userLogout( HttpSession session) {
+		
+		ModelAndView mav = new ModelAndView("login.jsp");
+		
+		session.removeAttribute("userName");
+		session.removeAttribute("userId");
+		
+		
+	
+		
+	
+		
+		return mav;
+		
+		
+	}
+	
 	
 	
 	

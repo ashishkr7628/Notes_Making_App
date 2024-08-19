@@ -9,6 +9,12 @@
 </head>
 <body>
 	<%@ include file="components/homeNavbar.jsp"%>
+	<%if(userName==null){
+		
+		response.sendRedirect("login.jsp");
+		
+	}
+		%>
 	
 	
 
