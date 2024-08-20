@@ -37,6 +37,7 @@
 									name="password" type="password" class="form-control" required>
 							</div>
 							<button type="submit" class="btn bg-primary text-white col-md-12">Login</button>
+							<a href="forgot" class="card-link">Forgot Password</a>
 						</form>
 					</div>
 				</div>

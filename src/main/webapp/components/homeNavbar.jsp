@@ -15,15 +15,26 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 				
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="<%=path %>/viewUser">Profile</a></li>
+<!-- 					<li class="nav-item"><a class="nav-link active" -->
+<%-- 						aria-current="page" href="<%=path %>/viewUser">Profile</a></li> --%>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="notes/add_Notes.jsp">Add Notes</a></li>
 						<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="<%=path %>/view_Notes">View Notes</a></li>	
 					
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="logout">logout</a></li>
+<!-- 					<li class="nav-item"><a class="nav-link active" -->
+<!-- 						aria-current="page" href="logout">logout</a></li> -->
+						
+						<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <%=userName %>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="<%=path %>/viewUser">Profile</a></li>
+    <li><a class="dropdown-item" href="logout">Logout</a></li>
+ 
+  </ul>
+</div>
 				</ul>
 
 			</div>

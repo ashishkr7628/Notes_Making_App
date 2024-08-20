@@ -83,5 +83,20 @@ public User fetchUserById(int id) {
 	
 }
 
+public User fetchByEmail(String email) {
+	
+	EntityManager em= emf.createEntityManager();
+	Query query = em.createQuery("select s from User s where s.email=?1");
+	query.setParameter(1, email);
+List<User> list = query.getResultList();
+
+User user = list.get(0);
+	return user;
+	
+}
+
+
+
+
 
 }
